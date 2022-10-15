@@ -1,4 +1,4 @@
-package com.carlos.BookStory;
+package com.carlos.bookstory;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,7 +15,7 @@ public class BookStoryApplication {
 	  @GetMapping("/")
 		public String index(){
 			return "Hello Word";
-		
+
 
 	}
 
