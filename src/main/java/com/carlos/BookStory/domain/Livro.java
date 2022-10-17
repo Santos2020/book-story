@@ -1,5 +1,7 @@
 package com.carlos.bookstory.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -13,7 +15,7 @@ public class Livro implements Serializable {
     private String titular;
     private String nome_autor;
     private String texto;
-
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
