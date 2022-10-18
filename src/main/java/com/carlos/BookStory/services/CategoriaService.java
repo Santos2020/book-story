@@ -1,6 +1,7 @@
 package com.carlos.bookstory.services;
 
 import com.carlos.bookstory.domain.Categoria;
+import com.carlos.bookstory.dtos.CategoriaDto;
 import com.carlos.bookstory.repositories.CategoriaRepository;
 import com.carlos.bookstory.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,4 +30,10 @@ public class CategoriaService {
         return categoriaRepository.save(obj);
     }
 
+    public Categoria update( Integer id, CategoriaDto objDto ) {
+        Categoria obj = findById(id);
+        obj.setNome(objDto.getNome());
+        obj.setDescricao(objDto.getDescricao());
+        return categoriaRepository.save(obj);
+    }
 }
